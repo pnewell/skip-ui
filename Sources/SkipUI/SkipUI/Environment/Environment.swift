@@ -243,6 +243,11 @@ extension EnvironmentValues {
         set { setBuiltinValue(key: "timeZone", value: newValue, defaultValue: { TimeZone.current }) }
     }
 
+    public var editMode: Binding<EditMode>? {
+        get { builtinValue(key: "editMode", defaultValue: { nil }) as! Binding<EditMode>? }
+        set { setBuiltinValue(key: "editMode", value: newValue, defaultValue: { nil }) }
+    }
+
     /* Not yet supported
     var accessibilityDimFlashingLights: Bool
     var accessibilityDifferentiateWithoutColor: Bool
